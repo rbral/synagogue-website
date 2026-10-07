@@ -9,7 +9,7 @@
     <body>
         <header>            
             <a href="index.php">
-                <img src="logo.png" alt="ShulFlow Logo">
+                <img src="ShulFlow logo.png" alt="ShulFlow Logo" width = "200">
             </a>
             
             <?php include 'menu.php' ?>
