@@ -7,3 +7,121 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : rbral
 */
 
+/* ShulFlow Website Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5fbfd;
+    color: #333333;
+}
+
+
+/* Header */
+.site-header {
+    background-color: white;
+    text-align: center;
+    padding-top: 12px;
+    border-bottom: 4px solid #00a9c7;
+}
+
+
+/* ShulFlow logo */
+.site-logo {
+    width: 300px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+
+/* Navigation menu */
+.site-menu {
+    background-color: #073b7a;
+}
+
+
+/* Menu list */
+.site-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Menu items */
+.site-menu li {
+    margin: 0;
+}
+
+
+/* Menu links */
+.site-menu a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Hover effect */
+.site-menu a:hover {
+    background-color: #00a9c7;
+    color: #073b7a;
+}
+
+
+/* Main content area */
+.main-content {
+    width: 85%;
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+
+/* Headings */
+h1 {
+    color: #073b7a;
+}
+
+h2 {
+    color: #00a9c7;
+}
+
+
+/* General links */
+a {
+    color: #0878bd;
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #073b7a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 35px;
+}
+
+
+/* Footer links */
+.site-footer a {
+    color: #53d1df;
+}
+
+.site-footer a:hover {
+    color: white;
+}
+
+.site-logo {
+    display: block;
+    margin: 0 auto 15px auto;
+}

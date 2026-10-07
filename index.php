@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>ShulFlow Main Page</title>
-    </head>
+
+    
     <?php include 'header.php' ?>
-    <body>
-        <h1>ShulFlow</h1>
+    
+    
+    <main class = "main-content">
+        <h1>Welcome to ShulFlow</h1>
         <p>
-            ADD BODY LINES HERE
+            ShulFlow provides an easy way for synagogue members and
+            administrators to stay connected and manage important shul
+            information.
         </p>
-    </body>
+    </main>
+    
     <?php include 'footer.php' ?>
-</html>
+    
+
