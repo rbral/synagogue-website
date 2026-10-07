@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html class="site-header">
     <head>
         <meta charset="UTF-8">
         <title>ShulFlow</title>

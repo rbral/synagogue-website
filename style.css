@@ -120,8 +120,3 @@ a {
 .site-footer a:hover {
     color: white;
 }
-
-.site-logo {
-    display: block;
-    margin: 0 auto 15px auto;
-}
