@@ -20,19 +20,21 @@ body {
 /* Header */
 .site-header {
     background-color: white;
-    text-align: center;
     padding-top: 12px;
     border-bottom: 4px solid #00a9c7;
+
+
 }
 
+/* Header links */
+.header-links {
+    
+}
 
 /* ShulFlow logo */
 .site-logo {
-    width: 300px;
-    max-width: 90%;
+    width: 200px;
     height: auto;
-    display: block;
-    margin: 0 auto 15px auto;
 }
 
 
@@ -79,6 +81,7 @@ body {
 .main-content {
     width: 85%;
     max-width: 1050px;
+    min-height: 500px;
     margin: 30px auto;
     padding: 30px;
     background-color: white;
@@ -108,7 +111,7 @@ a {
     color: white;
     text-align: center;
     padding: 18px;
-    margin-top: 35px;
+    margin-top: 350px;
 }
 
 

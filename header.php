@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>            
-            <a href="index.php">
+            <a href="index.php" >
                 <img src="ShulFlow logo.png" alt="ShulFlow Logo" class="site-logo">
             </a>
             
