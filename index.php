@@ -10,10 +10,7 @@
             <br> <br>
             Login or create your account to access your member information, 
             view pledges and donations, and sign up for upcoming events.
-            <br> <br>           
-            
-            
-            
+            <br> <br>            
         </p>
     </main>
     

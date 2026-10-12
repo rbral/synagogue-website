@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <title>ShulFlow</title>
         <link rel="stylesheet" href="style.css" >
+        <link rel="icon" type="image/png" href="ShulFlow logo.png">
     </head>
     <body>
         <header>            
