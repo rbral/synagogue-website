@@ -85,12 +85,7 @@ body {
     margin: 30px auto;
     padding: 30px;
     background-color: white;
-    border-radius: 8px;
-}
-
-/* Main content area for login page*/
-.login {
-    
+    border-radius: 8px; 
 }
 
 /* Headings */
@@ -126,4 +121,77 @@ a {
 
 .site-footer a:hover {
     color: white;
+}
+
+/* Login page only */
+body.login-page {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* White login box */
+body.login-page .log-in {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+/* Heading and instructions */
+body.login-page .log-in h1 {
+    text-align: center;
+    color: #073b7a;
+}
+
+body.login-page .log-in p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+body.login-page .log-in label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input fields */
+body.login-page .log-in input[type="text"],
+body.login-page .log-in input[type="email"],
+body.login-page .log-in input[type="tel"],
+body.login-page .log-in input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Login button */
+body.login-page .log-in .log-in-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #073b7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }

@@ -4,6 +4,7 @@
     
     
     <main class = "main-content">
+        <h1>Support our Community</h1>
         
     </main>
     
