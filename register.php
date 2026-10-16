@@ -12,7 +12,7 @@
 
             <p>Please fill in this form to become a member of our Shul.</p>
 
-            <form action="login_response.php" method="post">
+            <form action="register_response.php" method="post">
 
                 <label for="firstName">First Name:</label><br>
                 <input type="text" name="firstName" id="firstName" required>
