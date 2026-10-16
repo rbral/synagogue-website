@@ -15,11 +15,18 @@ session_start();
     if (isset($_SESSION['LoggedIn']) &&
         $_SESSION['LoggedIn'] == TRUE)
     {
-        $username = $_COOKIE['username'];
+        $username = $_SESSION['username'] ?? ($_COOKIE['username'] ?? '');
 
-        echo "Hello, " . $username . "!<br><br>";
+        echo "Hello, " . htmlspecialchars($username) . "!<br><br>";
 
-        echo "Welcome to the ShulFlow Admin Dashboard.";
+        echo "Welcome to the ShulFlow Admin Dashboard.<br><br>";
+
+        // Links to the admin pages
+        echo "<h2>Admin Options</h2>";
+
+        echo "<a href='mass_email.php'>Send Mass Email</a><br><br>";
+
+        echo "<a href='members.php'>Member Directory</a>";
     }
     else
     {

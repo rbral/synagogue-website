@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ShulFlow</title>
-    <link rel="stylesheet" href="/ShulFlow/style.css?v=3" >
+    <link rel="stylesheet" href="style.css?v=3" >
     <link rel="icon" type="image/png" href="ShulFlow logo.png">
 </head>
     
@@ -22,7 +22,7 @@
                 <input type="password" name="password" id="password" required>
                 <br><br>
 
-                <input type="submit" value="Log In" class="log-in-button">
+                <input type="submit" value="Log in" class="log-in-button">
 
             </form>
     </main> 

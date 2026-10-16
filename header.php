@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>ShulFlow</title>
-        <link rel="stylesheet" href="/ShulFlow/style.css?v=3" >
+        <link rel="stylesheet" href="style.css?v=3" >
         <link rel="icon" type="image/png" href="ShulFlow logo.png">
     </head>
     <body>
