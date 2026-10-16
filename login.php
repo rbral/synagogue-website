@@ -22,7 +22,7 @@
                 <input type="password" name="password" id="password" required>
                 <br><br>
 
-                <input type="submit" value="Register" class="log-in-button">
+                <input type="submit" value="Log In" class="log-in-button">
 
             </form>
     </main> 
