@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ShulFlow</title>
-    <link rel="stylesheet" href="/ShulFlow/style.css?v=2" >
+    <link rel="stylesheet" href="style.css?v=2" >
     <link rel="icon" type="image/png" href="ShulFlow logo.png">
 </head>
     
@@ -38,7 +38,7 @@
                 <input type="checkbox" name="check" id="check" required>
                 <br><br>
 
-                <input type="submit" value="Log In" class="log-in-button">
+                <input type="submit" value="Register" class="log-in-button">
 
             </form>
     </main> 
