@@ -10,11 +10,11 @@
 
         <h1>ShulFlow Login</h1>
 
-            <p>Please enter your username and password.</p>
+            <p>Please enter your email and password.</p>
 
             <form action="login_response.php" method="post">
 
-                <label for="username">Username:</label><br>
+                <label for="username">Email:</label><br>
                 <input type="text" name="username" id="username" required>
                 <br><br>
 

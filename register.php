@@ -14,12 +14,12 @@
 
             <form action="register_response.php" method="post">
 
-                <label for="firstName">First Name:</label><br>
-                <input type="text" name="firstName" id="firstName" required>
+                <label for="first_name">First Name:</label><br>
+                <input type="text" name="first_name" id="first_name" required>
                 <br><br>
 
-                <label for="lastName">Last Name:</label><br>
-                <input type="text" name="lastName" id="lastName" required>
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" name="last_name" id="last_name" required>
                 <br><br>
                 
                 <label for="email">Email Address:</label><br>
@@ -35,7 +35,7 @@
                 <br><br>
                 
                 <label for="check">By registering, you agree to receive email communications from our admins.</label><br>
-                <input type="checkbox" name="check" id="check" required>
+                <input type="checkbox" name="email_communications" id="check" required>
                 <br><br>
 
                 <input type="submit" value="Register" class="log-in-button">
