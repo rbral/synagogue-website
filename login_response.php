@@ -2,9 +2,8 @@
 
 session_start();
 
-// Valid usernames and passwords
-$usernames = array("admin", "rivka", "sarah");
-$passwords = array("admin123", "rivka123", "sarah123");
+// Connect to database
+require_once 'db_connect.php';
 
 // Get submitted information
 $username = $_POST['username'];
@@ -13,16 +12,39 @@ $password = $_POST['password'];
 // Assume login failed until a match is found
 $_SESSION['LoggedIn'] = FALSE;
 
-// Check each username and password
-for ($ix = 0; $ix < count($usernames); $ix++)
+// check username in DB
+$sql = "SELECT email, password_hash FROM user_info WHERE email = ?";
+
+$stmt = $conn->prepare($sql);
+
+// Bind the entered username to the SQL statement
+$stmt->bind_param("s", $username);
+
+// Execute the query
+$stmt->execute();
+
+// Get the results
+$result = $stmt->get_result();
+
+// Check if a matching username was found
+if ($result->num_rows == 1)
 {
-    if ($username == $usernames[$ix] &&
-        $password == $passwords[$ix])
+    $user = $result->fetch_assoc();
+
+    // Check if the password matches the saved hash
+    if (password_verify($password, $user['password_hash']))
     {
         $_SESSION['LoggedIn'] = TRUE;
-        break;
     }
 }
+  
+$stmt->close();
+$conn->close();
+
+
+
+
+
 
 // Set Cookie if logged in successfully
 if ($_SESSION['LoggedIn'] == TRUE)
@@ -43,14 +65,16 @@ if ($_SESSION['LoggedIn'] == TRUE)
     if ($_SESSION['LoggedIn'] == TRUE)
     {
         echo "Login successful!<br><br>";
+        
+        //TODO: eventually we need to check the user's role to see if memnber or admin
+        echo "<a href='admin_dashboard.php'>Go to Admin Dashboard</a>";
 
     }
     else
     {
         echo "Invalid username or password.<br><br>";
+        echo "<a href='login.php'>Try Again</a>";
     }
-
-    echo "<a href='admin_dashboard.php'>Go to Admin Dashboard</a>";
 
     ?>
 
