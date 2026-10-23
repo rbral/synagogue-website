@@ -13,9 +13,8 @@
             <tr><td>Arvit</td><td>Follows Minchah</td></tr>
         </table>    
 
-        <p> Shabbat: 9:00 am, Mincha 1 hour before Shkiah. </p>
+        <p> Shabbat: 9:00 am, Minchah 1 hour before Shkiah. </p>
 
-        </table>
     </main>
     
 <?php include 'footer.php' ?>

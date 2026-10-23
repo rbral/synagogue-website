@@ -192,3 +192,40 @@ body.login-page .log-in .log-in-button {
     font-weight: bold;
     cursor: pointer;
 }
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #073b7a;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f5fbfd;
+}
+
+.table select,
+.table button {
+    padding: 8px;
+    margin: 3px;
+}
+
+.table button {
+    background-color: #073b7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
