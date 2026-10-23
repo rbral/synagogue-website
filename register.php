@@ -27,7 +27,12 @@
                 <br><br>
                 
                 <label for="tel">Telephone Number:</label><br>
-                <input type="tel" name="tel" id="tel">
+                <input type="tel" id="tel" name="tel"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    title="Please enter exactly 10 digits without dashes or parentheses."
+                    required>
                 <br><br>
                 
                 <label for="password">New Password:</label><br>
