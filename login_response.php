@@ -13,7 +13,7 @@ $password = $_POST['password'];
 $_SESSION['LoggedIn'] = FALSE;
 
 // check username in DB
-$sql = "SELECT email, password_hash FROM user_info WHERE email = ?";
+$sql = "SELECT email, password_hash, role_id FROM user_info WHERE email = ?";
 
 $stmt = $conn->prepare($sql);
 
@@ -66,8 +66,12 @@ if ($_SESSION['LoggedIn'] == TRUE)
     {
         echo "Login successful!<br><br>";
         
-        //TODO: eventually we need to check the user's role to see if memnber or admin
-        echo "<a href='admin_dashboard.php'>Go to Admin Dashboard</a>";
+        // Check the user's role to see if member or admin
+        if ((int)$user['role_id'] === 1) {
+            echo "<a href='admin_dashboard.php'>Go to Admin Dashboard</a>";
+        } else {
+            echo "<a href='member_dashboard.php'>Go to Member Dashboard</a>";
+        }
 
     }
     else

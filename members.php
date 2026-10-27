@@ -24,9 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
 }
 
 // Retrieve members
-$sql = "SELECT user_id, first_name, last_name, email, tel, role_id
-        FROM user_info";
-
+$sql = "SELECT u.user_id, u.first_name, u.last_name, u.email, u.tel, u.role_id, u.membership_type_id, 
+    u.nusach_id, m.membership_type_name, n.nusach_name
+        FROM user_info u
+        LEFT JOIN membership_type m
+            ON u.membership_type_id = m.membership_type_id
+        LEFT JOIN nusach_type n
+            ON u.nusach_id = n.nusach_id";
+        
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -46,6 +51,9 @@ include 'header.php';
             <th>Email</th>
             <th>Telephone #</th>
             <th>Role</th>
+            <th>Membership Type</th>
+            <th>Nusach</th>
+            
         </tr>
     </thead>
 
@@ -90,6 +98,14 @@ include 'header.php';
                             Save
                         </button>
                     </form>
+                </td>
+                
+                <td>
+                    <?= htmlspecialchars($row['membership_type_name'] ?? '') ?>
+                </td>
+                
+                <td>
+                    <?= htmlspecialchars($row['nusach_name'] ?? '') ?>
                 </td>
             </tr>
         <?php endwhile; ?>
