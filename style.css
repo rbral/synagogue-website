@@ -168,7 +168,9 @@ body.login-page .log-in label {
 body.login-page .log-in input[type="text"],
 body.login-page .log-in input[type="email"],
 body.login-page .log-in input[type="tel"],
-body.login-page .log-in input[type="password"] {
+body.login-page .log-in input[type="password"],
+body.login-page .log-in select
+{
     display: block;
     width: 100%;
     padding: 12px;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2026 at 06:13 PM
+-- Generation Time: Oct 27, 2026 at 04:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,45 @@ SET time_zone = "+00:00";
 --
 -- Database: `shul_flow`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `membership_type`
+--
+
+CREATE TABLE `membership_type` (
+  `membership_type_id` int(11) NOT NULL,
+  `membership_type_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `membership_type`
+--
+
+INSERT INTO `membership_type` (`membership_type_id`, `membership_type_name`) VALUES
+(2, 'Family'),
+(1, 'Individual');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nusach_type`
+--
+
+CREATE TABLE `nusach_type` (
+  `nusach_id` int(11) NOT NULL,
+  `nusach_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nusach_type`
+--
+
+INSERT INTO `nusach_type` (`nusach_id`, `nusach_name`) VALUES
+(2, 'Ashkenaz'),
+(1, 'Edot HaMizrach'),
+(3, 'Sefard');
 
 -- --------------------------------------------------------
 
@@ -87,21 +126,37 @@ CREATE TABLE `user_info` (
   `email` varchar(50) NOT NULL,
   `tel` varchar(10) DEFAULT NULL,
   `password_hash` varchar(255) NOT NULL,
-  `role_id` int(11) NOT NULL DEFAULT 2
+  `role_id` int(11) NOT NULL DEFAULT 2,
+  `membership_type_id` int(11) DEFAULT NULL,
+  `nusach_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `tel`, `password_hash`, `role_id`) VALUES
-(1, 'Rivka', 'Aharoni', 'rivka@example.com', '000000000', '$2y$10$qRzc1GA5RFfGN7Sxs0AXROpPyHi4UL6RMvIC64Jxhx76xur4ihg32', 2),
-(9, 'Sarah', 'Cohen', 'sarah@example.com', '1111111111', '$2y$10$yY1ixwYtIygYNSSZW4f.fuSB2gpYo/Wcqln8ikf/Y/Qw0hiMK7LqC', 2),
-(10, 'Admin', 'Test', 'admin@example.com', '2222222222', '$2y$10$LiNtieoVjPwq5X3SewPGgO6pikZvrZ/eOTrjMMyxljiLPFs0V.uEu', 2);
+INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `tel`, `password_hash`, `role_id`, `membership_type_id`, `nusach_id`) VALUES
+(1, 'Rivka', 'Aharoni', 'rivka@example.com', '000000000', '$2y$10$qRzc1GA5RFfGN7Sxs0AXROpPyHi4UL6RMvIC64Jxhx76xur4ihg32', 2, NULL, NULL),
+(9, 'Sarah', 'Cohen', 'sarah@example.com', '1111111111', '$2y$10$yY1ixwYtIygYNSSZW4f.fuSB2gpYo/Wcqln8ikf/Y/Qw0hiMK7LqC', 2, NULL, NULL),
+(10, 'Admin', 'Test', 'admin@example.com', '2222222222', '$2y$10$LiNtieoVjPwq5X3SewPGgO6pikZvrZ/eOTrjMMyxljiLPFs0V.uEu', 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `membership_type`
+--
+ALTER TABLE `membership_type`
+  ADD PRIMARY KEY (`membership_type_id`),
+  ADD UNIQUE KEY `membership_type_name` (`membership_type_name`);
+
+--
+-- Indexes for table `nusach_type`
+--
+ALTER TABLE `nusach_type`
+  ADD PRIMARY KEY (`nusach_id`),
+  ADD UNIQUE KEY `nusach_name` (`nusach_name`);
 
 --
 -- Indexes for table `pledges`
@@ -131,11 +186,25 @@ ALTER TABLE `roles`
 ALTER TABLE `user_info`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD KEY `role_id` (`role_id`);
+  ADD KEY `role_id` (`role_id`),
+  ADD KEY `membership_type_id` (`membership_type_id`),
+  ADD KEY `nusach_id` (`nusach_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `membership_type`
+--
+ALTER TABLE `membership_type`
+  MODIFY `membership_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `nusach_type`
+--
+ALTER TABLE `nusach_type`
+  MODIFY `nusach_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pledges`
@@ -176,7 +245,9 @@ ALTER TABLE `pledges`
 -- Constraints for table `user_info`
 --
 ALTER TABLE `user_info`
-  ADD CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`);
+  ADD CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`),
+  ADD CONSTRAINT `user_info_ibfk_2` FOREIGN KEY (`membership_type_id`) REFERENCES `membership_type` (`membership_type_id`),
+  ADD CONSTRAINT `user_info_ibfk_3` FOREIGN KEY (`nusach_id`) REFERENCES `nusach_type` (`nusach_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

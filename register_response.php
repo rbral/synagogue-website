@@ -27,26 +27,64 @@ include 'header.php';
     
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // safer to save a hashed version of password
 
+    //Get selected dropdown values
+    $membership_type_id = $_POST['membership_type_id'] ?? '';
+    $nusach_id = $_POST['nusach_id'] ?? '';
+    
+    // Check that both dropdowns have a selection
+    if ($membership_type_id == '' || $nusach_id == '')
+    {
+        echo "Error: Please select a membership type and nusach.<br><br>";
+        echo "<a href='register.php'>Try Again</a>";
+        exit();
+    }
+    
+    
     // Prepare sql statement
-    $sql = "INSERT INTO user_info (first_name, last_name, email, tel, password_hash)
-    VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO user_info
+            (first_name, last_name, email, tel, password_hash,
+             membership_type_id, nusach_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $conn->prepare($sql);
 
     // connects the PHP variables to the five ? placeholders
+    // s = string, i = integer
     $stmt->bind_param(
-        // all five submitted values are strings
-        "sssss",
+        "sssssii",
         $first_name,
         $last_name,
         $email,
         $tel,
-        $hashedPassword
+        $hashedPassword,
+        $membership_type_id,
+        $nusach_id
     );
+    
+    
 
     try
     {
         if ($stmt->execute()) {
+            $sql = "SELECT membership_type_name, nusach_name
+                    FROM user_info
+                    JOIN membership_type
+                    ON user_info.membership_type_id = membership_type.membership_type_id
+                    JOIN nusach_type
+                    ON user_info.nusach_id = nusach_type.nusach_id
+                    WHERE user_info.user_id = ?";
+            
+            $details_stmt = $conn->prepare($sql);
+            
+            // Get ID of the user we just registered
+            $user_id = $conn->insert_id;
+
+            $details_stmt->bind_param("i", $user_id);
+            $details_stmt->execute();
+
+            $result = $details_stmt->get_result();
+            $row = $result->fetch_assoc();
+            
             // Print a message to the member. 
             echo "<h1>Registration Submitted</h1>";
             echo "<p>Thank you for registering to ShulFlow!</p>";
@@ -68,6 +106,13 @@ include 'header.php';
 
             echo "<strong>Telephone Number:</strong><br>";
             echo htmlspecialchars($tel) . "<br><br>";
+            
+            // Display membership type and nusach from database
+            echo "<strong>Membership Type:</strong><br>";
+            echo htmlspecialchars($row['membership_type_name']) . "<br><br>";
+
+            echo "<strong>Preferred Nusach:</strong><br>";
+            echo htmlspecialchars($row['nusach_name']) . "<br><br>";
 
             if (isset($_POST['email_communications']))
             {
@@ -75,21 +120,23 @@ include 'header.php';
             }
 
             echo "<br><a href='login.php'>Log In</a> to access your dashboard.";
+        
+            $details_stmt->close();
         }
     } catch (mysqli_sql_exception $e)
-{
-    if ($e->getCode() == 1062)
-    {
-        echo "This email address is already registered.<br>";
-        echo "<a href='register.php'>Try Again</a><br><br>";
-        echo "<a href='login.php'>Log In</a>";
-    }
-    else
-    {
-        error_log($e->getMessage());
-        echo "An error occurred during registration. Please try again.";
-    }
-}
+        {
+            if ($e->getCode() == 1062)
+            {
+                echo "This email address is already registered.<br>";
+                echo "<a href='register.php'>Try Again</a><br><br>";
+                echo "<a href='login.php'>Log In</a>";
+            }
+            else
+            {
+                error_log($e->getMessage());
+                echo "An error occurred during registration. Please try again.";
+            }
+        }
 
     $stmt->close();
     $conn->close();
