@@ -266,3 +266,42 @@ body.login-page .log-in .log-in-button {
   width: 100%;
   border: 0;
 }
+
+
+/* Contact Us form */
+
+.contact-form {
+    max-width: 550px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+.contact-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #073b7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}

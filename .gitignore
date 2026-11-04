@@ -1,1 +1,5 @@
 /nbproject/private/
+
+# Private Gmail credentials
+/gmail_config.php
+

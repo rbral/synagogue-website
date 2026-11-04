@@ -14,5 +14,6 @@
         <li><a href="schedule.php">Minyanim Schedules</a></li>
         <li><a href="donations.php">Donations</a></li>
         <li><a href="sponsorships.php">Sponsorships</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
     </ul>
 </nav>
