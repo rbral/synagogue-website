@@ -6,7 +6,7 @@
     <main class = "main-content">
         <h1>Minyanim Schedule</h1>
         <h3>Daily Schedule</h3>
-        <table>
+        <table class="table">
             <tr><th>Tefilah</th><th>Sunday-Friday</th></tr>
             <tr><td>Shacharit</td><td>7:00 am</td></tr>
             <tr><td>Minchah</td><td>Half an hour before Shkiah</td></tr>

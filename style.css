@@ -120,8 +120,8 @@ a {
     color: white;
 }
 
-/* Login page only */
-body.login-page {
+/* All pages with forms */
+body.forms-page {
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -131,8 +131,9 @@ body.login-page {
     box-sizing: border-box;
 }
 
-/* White login box */
-body.login-page .log-in {
+/* White box */
+body.forms-page .forms,
+.contact-form {
     display: block;
     width: 100%;
     max-width: 420px;
@@ -145,19 +146,19 @@ body.login-page .log-in {
 }
 
 /* Heading and instructions */
-body.login-page .log-in h1 {
+body.forms-page .forms h1 {
     text-align: center;
     color: #073b7a;
 }
 
-body.login-page .log-in p {
+body.forms-page .forms p {
     text-align: center;
     color: #666;
     margin-bottom: 25px;
 }
 
 /* Labels */
-body.login-page .log-in label {
+body.forms-page .forms label, .contact-form label {
     display: block;
     margin-bottom: 7px;
     color: #333;
@@ -165,12 +166,14 @@ body.login-page .log-in label {
 }
 
 /* Input fields */
-body.login-page .log-in input[type="text"],
-body.login-page .log-in input[type="email"],
-body.login-page .log-in input[type="tel"],
-body.login-page .log-in input[type="password"],
-body.login-page .log-in select,
-body.login-page .log-in input[type="message"]
+body.forms-page .forms input[type="text"],
+body.forms-page .forms input[type="email"],
+body.forms-page .forms input[type="tel"],
+body.forms-page .forms input[type="password"],
+body.forms-page .forms select,
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea
 {
     display: block;
     width: 100%;
@@ -182,8 +185,8 @@ body.login-page .log-in input[type="message"]
     font-size: 15px;
 }
 
-/* Login button */
-body.login-page .log-in .log-in-button {
+/* Forms submit button */
+body.forms-page .forms .submit-button {
     display: block;
     width: 100%;
     padding: 12px;
@@ -272,36 +275,6 @@ body.login-page .log-in .log-in-button {
 
 .contact-form {
     max-width: 550px;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 7px;
-    font-weight: bold;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    display: block;
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
     box-sizing: border-box;
-    font: inherit;
-}
-
-.contact-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #073b7a;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
 }

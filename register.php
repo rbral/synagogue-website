@@ -17,12 +17,12 @@
 <head>
     <meta charset="UTF-8">
     <title>ShulFlow</title>
-    <link rel="stylesheet" href="style.css?v=2" >
+    <link rel="stylesheet" href="style.css?v=4" >
     <link rel="icon" type="image/png" href="ShulFlow logo.png">
 </head>
     
-<body class="login-page"> 
-    <main class="log-in">
+<body class="forms-page"> 
+    <main class="forms">
 
         <h1>Register</h1>
 
@@ -97,7 +97,7 @@
                 <input type="checkbox" name="email_communications" id="check" required>
                 <br><br>
 
-                <input type="submit" value="Register" class="log-in-button">
+                <input type="submit" value="Register" class="submit-button">
 
             </form>
     </main> 

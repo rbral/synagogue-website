@@ -24,7 +24,7 @@ session_start();
         // Links to the admin pages
         echo "<h2>Admin Options</h2>";
 
-        echo "<a href='mass_email.php'>Send Mass Email</a><br><br>";
+        // TODO: DO WE NEED? echo "<a href='mass_email.php'>Send Mass Email</a><br><br>";
 
         echo "<a href='members.php'>Member Directory</a>";
     }
