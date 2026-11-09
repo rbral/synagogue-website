@@ -186,7 +186,7 @@ body.forms-page .forms select,
 }
 
 /* Forms submit button */
-body.forms-page .forms .submit-button {
+body.forms-page .forms .submit-button, .contact-form .submit-button {
     display: block;
     width: 100%;
     padding: 12px;

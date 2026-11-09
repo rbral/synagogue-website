@@ -19,7 +19,7 @@
         <label for="message">Message:</label>
         <textarea name="message" id="message" rows="6" maxlength="5000" required></textarea>
 
-        <input type="submit" value="Send Message" class="contact-button">
+        <input type="submit" value="Send Message" class="submit-button">
 
     </form>
 
