@@ -21,10 +21,9 @@ session_start();
 
         echo "Welcome to the ShulFlow Admin Dashboard.<br><br>";
 
-        // Links to the admin pages
+        // Link to the admin page
         echo "<h2>Admin Options</h2>";
 
-        // TODO: DO WE NEED? echo "<a href='mass_email.php'>Send Mass Email</a><br><br>";
 
         echo "<a href='members.php'>Member Directory</a>";
     }

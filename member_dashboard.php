@@ -21,13 +21,11 @@ session_start();
 
         echo "Welcome to the ShulFlow Member Dashboard.<br><br>";
 
-        // Links to the member pages
+        // Link to the member page
         echo "<h2>Member Options</h2>";
 
-        // TODO: Add relevant pages 
-       // echo "<a href='mass_email.php'>Send Mass Email</a><br><br>";
+        echo "<a href='account.php'>View My Account Information</a><br><br>";
 
-       // echo "<a href='members.php'>My Pledges</a>";
     }
     else
     {
