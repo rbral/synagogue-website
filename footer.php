@@ -8,6 +8,21 @@
     5555 Shul Ln, Hometown NY 78384
 </footer>
 
+
+<script src="js/jquery.slimmenu.min.js"></script>
+
+<script>
+    $('#navigation').slimmenu({
+        resizeWidth: '800',
+        collapserTitle: 'Main Menu',
+        animSpeed: 'medium',
+        easingEffect: null,
+        indentChildren: false,
+        childrenIndenter: '&nbsp;'
+    });
+</script>
+
+
 </body>
 
 </html>

@@ -1,0 +1,280 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+
+
+/* ShulFlow Website Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5fbfd;
+    color: #333333;
+}
+
+
+/* Header */
+.site-header {
+    background-color: white;
+    padding-top: 12px;
+    border-bottom: 4px solid #00a9c7;
+
+
+}
+
+/* Header links */
+.header-links {
+    
+}
+
+/* ShulFlow logo */
+.site-logo {
+    width: 200px;
+    height: auto;
+}
+
+
+/* Navigation menu */
+.site-menu {
+    background-color: #073b7a;
+}
+
+
+/* Menu list */
+.site-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Menu items */
+.site-menu li {
+    margin: 0;
+}
+
+
+/* Menu links */
+.site-menu a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Hover effect */
+.site-menu a:hover {
+    background-color: #00a9c7;
+    color: #073b7a;
+}
+
+
+/* Main content area */
+.main-content {
+    width: 85%;
+    max-width: 1050px;
+    min-height: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px; 
+}
+
+/* Headings */
+h1 {
+    color: #073b7a;
+}
+
+h2 {
+    color: #00a9c7;
+}
+
+
+/* General links */
+a {
+    color: #0878bd;
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #073b7a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 350px;
+}
+
+
+/* Footer links */
+.site-footer a {
+    color: #53d1df;
+}
+
+.site-footer a:hover {
+    color: white;
+}
+
+/* All pages with forms */
+body.forms-page {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* White box */
+body.forms-page .forms,
+.contact-form {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+/* Heading and instructions */
+body.forms-page .forms h1 {
+    text-align: center;
+    color: #073b7a;
+}
+
+body.forms-page .forms p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+body.forms-page .forms label, .contact-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input fields */
+body.forms-page .forms input[type="text"],
+body.forms-page .forms input[type="email"],
+body.forms-page .forms input[type="tel"],
+body.forms-page .forms input[type="password"],
+body.forms-page .forms select,
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea
+{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Forms submit button */
+body.forms-page .forms .submit-button, .contact-form .submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #073b7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #073b7a;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f5fbfd;
+}
+
+.table select,
+.table button {
+    padding: 8px;
+    margin: 3px;
+}
+
+.table button {
+    background-color: #073b7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Slide Show */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+
+
+/* Contact Us form */
+
+.contact-form {
+    max-width: 550px;
+    width: 100%;
+    box-sizing: border-box;
+}

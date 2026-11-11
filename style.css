@@ -46,8 +46,8 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 
@@ -277,4 +277,26 @@ body.forms-page .forms .submit-button, .contact-form .submit-button {
     max-width: 550px;
     width: 100%;
     box-sizing: border-box;
+}
+
+/* SlimMenu colors */
+.site-menu ul.slimmenu li {
+    background-color: #073b7a;
+}
+
+.site-menu ul.slimmenu li a {
+    color: white;
+}
+
+.site-menu ul.slimmenu li a:hover {
+    background-color: #00a9c7;
+    color: #073b7a;
+}
+
+/* SlimMenu mobile menu */
+.menu-collapser {
+    background-color: #073b7a;
+}
+.collapse-button {
+    background-color: #073b7a;
 }
